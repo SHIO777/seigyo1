@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="webiopi.js"></script>
+    <title>Servo wo ugokasu</title>
+</head>
+<body>
+    <input type="number" id="textbox1">
+    <button type="button" id="button1" onclick="send()">SEND</button>
+    <span id="span1"></span>
+<script>
+    
+    
+    function send(){
+        // comment >> control + /
+        var send_value = document.getElementById('textbox1').value;
+        var print = document.getElementById('span1');
+        print.innerHTML = send_value
+        webiopi().callMacro("recieve", send_value); 
+    }
+
+
+
+</script>
+</body>
+</html>
+
